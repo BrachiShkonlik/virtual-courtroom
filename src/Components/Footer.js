@@ -1,6 +1,6 @@
 import React from 'react';
 import { Timer } from './Timer';
-import { MDBFooter, MDBContainer, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBFooter, MDBContainer } from 'mdb-react-ui-kit';
 import Button from 'react-bootstrap/Button';
 import '../Style/Footer.css';
 import { CDBBtn } from "cdbreact";

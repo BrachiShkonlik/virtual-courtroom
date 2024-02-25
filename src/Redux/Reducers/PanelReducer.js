@@ -1,15 +1,14 @@
 var inititalState = [];
 
-
-
-const userReducer = (state = inititalState , action ) => {
+ const PanelReducer = (state = inititalState , action ) => {
 
     switch(action.type) {
-        case 'SETUSER':
-            
+        case 'SETPANELDETAILS':
+            debugger
             state = action.payload;
             return state;
     }
     return state;
 };
-export default userReducer;
+
+export default PanelReducer;
