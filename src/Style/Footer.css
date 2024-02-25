@@ -1,0 +1,72 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+
+
+.MediaOptionsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Center items horizontally */
+}
+
+.LiveControlsContainer {
+    display: flex;
+    justify-content: flex-start;
+    /* Align items to the left */
+    /* margin-top: auto; */
+    /* margin-bottom: 10px?; */
+    /* Add space between the two containers */
+}
+
+/* .LiveControlsContainer .live {
+    margin-right: 10px;
+} */
+
+.LiveControlsContainer .live {
+    width: auto; /* Set width to auto for better responsiveness */
+    min-width: 100px; /* Set minimum width to prevent buttons from being too narrow */
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+.margin {
+    margin-top: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.live {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .LiveControlsContainer {
+        /* flex-direction: column; */  /* Stack buttons vertically on smaller screens */
+        align-items: flex-start;
+        /* Align buttons to the left */
+    }
+
+    .LiveControlsContainer .live {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 20px;
+        height: 30px;
+        /* Remove right margin for buttons when stacked vertically */
+    }
+    .live_text {
+        font-size: small;
+        text-align: center;
+    }
+}
+
+@media (max-width: 770px) {
+    .MediaOptionsContainer .margin .btn-label {
+        display: none;
+        /* Hide the button text */
+    }
+}
