@@ -28,11 +28,6 @@ export function Footer() {
         // This function will be called when the user clicks on the share screen button
     }
 
-    function startLiveSession() {
-        // Code to start the live session
-        // This function will be called when the user clicks on the live button
-    }
-
 
     return (
         <MDBFooter className='text-white text-center footer' style={{ backgroundColor: 'rgb(0, 0, 0)' }}>
@@ -45,7 +40,7 @@ export function Footer() {
             </MDBContainer>
             <MDBContainer className='container'>
                 <div className="LiveControlsContainer">
-                    <Button className="live" variant="danger" onClick={() => startLiveSession()}><span className='live_text'>Live</span></Button>
+                    <Button className="live" variant="danger" /*disabled='false'*/><span className='live_text'>Live</span></Button>
                     <Timer className="timer"></Timer>
                 </div>
             </MDBContainer>
