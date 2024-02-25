@@ -1,0 +1,15 @@
+.timerContainer {
+    text-align: center;
+}
+
+.timer {
+    text-align: center;
+}
+
+@media (max-width: 770px) {
+    .timer {
+        font-size: small;
+    }
+
+
+}
