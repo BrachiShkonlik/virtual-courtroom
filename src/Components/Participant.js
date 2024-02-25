@@ -1,10 +1,9 @@
 import React from 'react';
 
-function Participant({ name, videoStream }) {
+function Participant({ videoStream }) {
   return (
     <div className="Participant">
       {videoStream && <video src={videoStream} autoPlay muted />}
-      <span>{name}</span>
     </div>
   );
 }
