@@ -1,0 +1,53 @@
+.VideoLayout {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 20px;
+}
+
+.JudgesSection, .PartiesSection {
+  width: 100%;
+}
+
+.VideoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.Participant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Customize styles for judges */
+.JudgesSection {
+  order: 1; /* Ensure judges section is placed first */
+}
+
+.JudgesSection h2 {
+  color: #333;
+}
+
+.Participant.judge {
+  background-color: #ffe0b2; /* Customize background color for judges */
+}
+
+/* Customize styles for parties */
+.PartiesSection {
+  order: 2; /* Ensure parties section is placed second */
+}
+
+.PartiesSection h2 {
+  color: #333;
+}
+
+.Participant.party {
+  background-color: #bbdefb; /* Customize background color for parties */
+}
