@@ -39,7 +39,7 @@
 
 .panel-details {
     color: white;
-    margin-right: 160px;
+    margin-right: 140px;
 }
 
 .panel-details p {
@@ -73,6 +73,21 @@
     }
     .number-case {
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .panel-details {
+        color: white;
+        margin-right: 80px;
+    }
+
+    .icon {
+        margin-right: 0;
+        
+    }
+    .recording {
+        margin-right: 0;
     }
 }
 

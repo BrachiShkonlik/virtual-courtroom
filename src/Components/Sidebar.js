@@ -5,6 +5,7 @@ import { MdOutlinePeopleOutline } from "react-icons/md";
 import { RiScales3Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { LuShield } from "react-icons/lu";
+import logo from '../Style/logo.jpg';
 import '../Style/Sidebar.css';
 
 export function Sidebar() {
@@ -22,12 +23,12 @@ export function Sidebar() {
     };
 
     const panelDetails = (useSelector((state) => state.PanelReducer));
-  
+
     const judges = panelDetails.judges;
     const parties = panelDetails.litigants;
-  
+
     if (!judges || !parties) {
-      return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     const handleLeaveDiscussion = () => {
@@ -38,7 +39,7 @@ export function Sidebar() {
     return (
         <div className="sidebar">
             <div className="logo-section">
-                <img src='../Style/Logo.jpg' alt="Logo" />
+                <img src={logo} alt="Logo" className="logo" />
             </div>
             <div className="zoom-sidebar">
                 <div className="sidebar-section" onClick={() => setIsPeopleModalOpen(true)}>
@@ -65,10 +66,10 @@ export function Sidebar() {
             <Modal isOpen={isPeopleModalOpen} onClose={handleCloseModal}>
                 <h3>אנשים</h3>
                 <ul>
-                    {judges.map( judge => (
+                    {judges.map(judge => (
                         <p>כבוד השופט {judge}</p>
                     ))}
-                     {parties.map( party => (
+                    {parties.map(party => (
                         <p>{party}</p>
                     ))}
                 </ul>
@@ -81,7 +82,7 @@ export function Sidebar() {
             <Modal isOpen={isManagerModalOpen} onClose={handleCloseModal}>
                 <h3>מנהל דיון</h3>
                 <ul>
-                    {judges.map( judge => (
+                    {judges.map(judge => (
                         <p>כבוד השופט {judge}</p>
                     ))}
                 </ul>
@@ -90,8 +91,7 @@ export function Sidebar() {
                 <h3>הגדרות</h3>
                 <p></p>
             </Modal>
-            <button className="leave-discussion-btn" onClick={handleLeaveDiscussion}>יציאה מהדיון</button>
-
+            <button className="leave-discussion-btn" onClick={handleLeaveDiscussion}><h7 className="leave-discussion">יציאה מהדיון</h7></button>
         </div>
     );
 }
