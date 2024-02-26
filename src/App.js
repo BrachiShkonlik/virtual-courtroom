@@ -5,7 +5,7 @@ import { MeetingRoom } from './Components/MeetingRoom';
 import { DataFetcher } from './Components/DataFetcher';
 import Store from './Redux/Store';
 import { Provider } from 'react-redux';
-import { useEffect } from 'react';
+import { Sidebar } from './Components/Sidebar';
 
 
 function App() {
@@ -30,10 +30,10 @@ function App() {
       <Provider store={Store}>
         <DataFetcher></DataFetcher>
         <MeetingRoom judges={judges} parties={parties} />
+        <Footer className='footer'></Footer>
+        <Sidebar></Sidebar>
       </Provider>
-
       
-      <Footer className='footer'></Footer>
     </div>
   );
 }

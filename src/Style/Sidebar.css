@@ -1,0 +1,87 @@
+ .sidebar-section {
+   margin-bottom: 20px;
+ }
+
+ .sidebar-section h2 {
+   font-size: 15px;
+   margin-bottom: 10px;
+   color: #f8f8f8;
+ }
+
+ .icon {
+   color: #f8f8f8;
+   font-size: large;
+ }
+
+
+
+ .people-icon {
+   display: flex;
+   align-items: center;
+ }
+
+ .participant-circle {
+   background-color: #fffdfd;
+   /* Example color */
+   color: #020202;
+   width: 17px;
+   height: 17px;
+   border-radius: 50%;
+   font-size: x-small;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .sidebar {
+   width: 150px;
+   /* Adjust the width as needed */
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #25253d;
+   padding: 20px;
+   overflow-y: auto;
+   /* Add scrollbar if content overflows */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* Center align all child elements horizontally */
+ }
+
+
+ .zoom-sidebar {
+   width: 150px;
+   /* Adjust the width as needed */
+   position: fixed;
+   top: 40%;
+   /* Move the sidebar to the vertical center */
+   right: 0;
+   transform: translateY(-50%);
+   /* Center the sidebar vertically */
+   background-color: #25253d;
+   padding: 20px;
+   overflow-y: auto;
+   /* Add scrollbar if content overflows */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   /* Center align all child elements horizontally */
+ }
+
+
+ .leave-discussion-btn {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%; /* Position in the middle */
+  transform: translateX(-40%); /* Center horizontally */
+  background-color: rgb(44, 49, 65); /* Set background color to black */
+  color: red; /* Set text color to red */
+  font-size: 13px;
+  border-radius: 10px; /* Set border radius to make the edges round */
+  padding: 10px 20px; /* Add padding to the button */
+  border: none; /* Remove default border */
+  cursor: pointer;
+  white-space: nowrap;
+}
