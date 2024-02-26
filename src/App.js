@@ -6,34 +6,21 @@ import { DataFetcher } from './Components/DataFetcher';
 import Store from './Redux/Store';
 import { Provider } from 'react-redux';
 import { Sidebar } from './Components/Sidebar';
+import { Header } from './Components/Header';
+import { Tune } from '@mui/icons-material';
 
 
 function App() {
-  const judges = [
-    { name: 'Judge 1', videoStream: 'judge1-video-stream-url' },
-
-  ];
-
-  const parties = [
-    { name: 'Party 1', videoStream: 'party1-video-stream-url' },
-    { name: 'Party 2', videoStream: 'party2-video-stream-url' },
-    { name: 'Party 1', videoStream: 'party1-video-stream-url' },
-    { name: 'Party 2', videoStream: 'party2-video-stream-url' }
-  ];
-  // useEffect(() => {
-  //   debugger
-  //   <DataFetcher></DataFetcher>
-  // });
 
   return (
     <div className="App">
       <Provider store={Store}>
+        <Header isExpanded={Tune} isRecording={Tune}></Header>
         <DataFetcher></DataFetcher>
-        <MeetingRoom judges={judges} parties={parties} />
+        <MeetingRoom />
         <Footer className='footer'></Footer>
         <Sidebar></Sidebar>
       </Provider>
-      
     </div>
   );
 }
