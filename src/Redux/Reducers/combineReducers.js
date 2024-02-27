@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import userReducer from "./userReducer";
-import passengerReducer from "./passengerReducer";
+import PanelReducer from "./PanelReducer";
+import MergedDataReducer from "./MergedDataReducer";
+import ZoomReducer from './ZoomReducer';
 
 export const allReducers = combineReducers({
-    userReducer : userReducer ,
-    passengerReducer : passengerReducer,
+    PanelReducer : PanelReducer ,
+    MergedDataReducer : MergedDataReducer, 
+    ZoomReducer : ZoomReducer 
 })

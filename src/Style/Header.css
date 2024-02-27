@@ -1,0 +1,93 @@
+
+.zoom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+    height: 70px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.recording {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.recording-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 5px;
+}
+
+.recording-text {
+    color: white;
+    font-size: small;
+}
+
+.icon {
+    margin-right: 20px;
+    color: white;
+}
+
+.panel-details {
+    color: white;
+    margin-right: 140px;
+}
+
+.panel-details p {
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.title {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.number-case {
+    font-size: small;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-weight: bold;
+        font-size: small;
+    }
+    .number-case {
+        font-size: x-small;
+    }
+}
+
+@media (max-width:543px) {
+    .title {
+        font-weight: bold;
+        font-size: small;
+    }
+    .number-case {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .panel-details {
+        color: white;
+        margin-right: 80px;
+    }
+
+    .icon {
+        margin-right: 0;
+        
+    }
+    .recording {
+        margin-right: 0;
+    }
+}
+

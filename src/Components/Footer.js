@@ -1,6 +1,6 @@
 import React from 'react';
 import { Timer } from './Timer';
-import { MDBFooter, MDBContainer, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBFooter, MDBContainer } from 'mdb-react-ui-kit';
 import Button from 'react-bootstrap/Button';
 import '../Style/Footer.css';
 import { CDBBtn } from "cdbreact";
@@ -28,24 +28,19 @@ export function Footer() {
         // This function will be called when the user clicks on the share screen button
     }
 
-    function startLiveSession() {
-        // Code to start the live session
-        // This function will be called when the user clicks on the live button
-    }
-
 
     return (
         <MDBFooter className='text-white text-center footer' style={{ backgroundColor: 'rgb(0, 0, 0)' }}>
             <MDBContainer>
                 <div className="MediaOptionsContainer">
-                    <CDBBtn color="dark" circle className="share margin" onClick={() => handleScreenShareToggle()}><span className='btn-label'>שיתוף</span> <MdIosShare /></CDBBtn>
-                    <CDBBtn color="dark" circle className="microphone margin" onClick={() => handleMicrophoneToggle()}><span className='btn-label'>מיקרופון</span><FaMicrophone /></CDBBtn>
-                    <CDBBtn color="dark" circle className="camera margin" onClick={() => handleCameraToggle()} ><span className='btn-label'>מצלמה</span> <BsFillCameraVideoFill /></CDBBtn>
+                    <div className="ZoomControl" onClick={() => handleScreenShareToggle()}><span className='btn-label'>שיתוף</span> <MdIosShare /></div>
+                    <div className="ZoomControl" onClick={() => handleMicrophoneToggle()}><span className='btn-label'>מיקרופון</span><FaMicrophone /></div>
+                    <div className="ZoomControl" onClick={() => handleCameraToggle()} ><span className='btn-label'>מצלמה</span> <BsFillCameraVideoFill /></div>
                 </div>
             </MDBContainer>
             <MDBContainer className='container'>
                 <div className="LiveControlsContainer">
-                    <Button className="live" variant="danger" onClick={() => startLiveSession()}><span className='live_text'>Live</span></Button>
+                    <div className="live"><span className='live_text'>Live</span></div>
                     <Timer className="timer"></Timer>
                 </div>
             </MDBContainer>
