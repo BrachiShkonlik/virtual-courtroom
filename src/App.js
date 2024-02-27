@@ -1,6 +1,11 @@
 import './App.css';
 import { Footer } from './Components/Footer';
-// import { DiscussionPanel } from './Components/DiscussionPanel'
+import { DiscussionPanel } from './Components/DiscussionPanel'
+import { MeetingRoom } from './Components/MeetingRoom';
+import { DataFetcher } from './Components/DataFetcher';
+import Store from './Redux/Store';
+import { Provider } from 'react-redux';
+import { useEffect } from 'react';
 import { MeetingRoom } from './Components/MeetingRoom';
 import { DataPanelFetcher } from './Components/DataPanelFetcher';
 import Store from './Redux/Store';
@@ -10,11 +15,11 @@ import { Header } from './Components/Header';
 import { Tune } from '@mui/icons-material';
 import { DataZoomFetcher } from './Components/DataZoomFetcher';
 import { ParentComponent } from './Components/ParentComponent ';
-// import { VirtualCourtroom } from './Components/VirtualCourtroom';
 
 
 
-function App() {
+
+
 
   return (
     <div className="App">
