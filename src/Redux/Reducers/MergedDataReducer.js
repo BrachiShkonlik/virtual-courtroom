@@ -1,14 +1,13 @@
 var inititalState = [];
 
- const PanelReducer = (state = inititalState , action ) => {
+ const MergedDataReducer = (state = inititalState , action ) => {
 
     switch(action.type) {
-        case 'SETPANELDETAILS':
+        case 'SETMERGEDATA':
             state = action.payload;
             return state;
     }
     return state;
 };
 
-export default PanelReducer;
-
+export default MergedDataReducer;
