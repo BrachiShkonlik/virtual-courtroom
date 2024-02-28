@@ -1,14 +1,20 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { IoShieldOutline } from "react-icons/io5";
 import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import '../Style/Header.css';
 
-
-export function Header({ isRecording }) {
-    const panelDetails = (useSelector((state) => state.PanelReducer));
+export function Header() {
+    const panelDetails = useSelector((state) => state.PanelReducer);
+    const zoomData = useSelector((state) => state.ZoomReducer);
     const [isFullScreen, setIsFullScreen] = useState(false);
+    const [isRecording, setIsRecording] = useState(false);
+
+    useEffect(() => {
+        // Filter Zoom data to find if any participant meets the conditions
+        const isRecordingParticipant = zoomData.some(participant => participant.itIsMyComputer === "true" && participant.ItisRecoder === "true");
+        setIsRecording(isRecordingParticipant);
+    }, [zoomData]);
 
     function toggleFullScreen() {
         if (!isFullScreen) {
