@@ -1,0 +1,107 @@
+/* Participant.css */
+.ParticipantContainer {
+    width: calc(33.33% - 10px);
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    max-height: calc((100vh - 160px) / 2);
+    border-radius: 7px;
+    margin: 5px;
+  }
+  
+  .Participant {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: bisque;
+  }
+  
+  .Footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(27, 27, 27, 0.636);
+    display: flex;
+  }
+  
+  .MicrophoneIcon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: large;
+  }
+  
+  .FooterContent {
+    flex: 1;
+  }
+  
+  .TopRightContent {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: white;
+    color: black;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .Blue{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: rgb(41, 195, 237);
+    color: black;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  
+  .Logo {
+    height: 35px;
+    margin-left: auto;
+    margin-top: 7.5px;
+    margin-right: 7.5px;
+  }
+  
+  .CommitteeName,
+  .Litigant {
+    text-align: right;
+    color: rgb(34, 144, 217);
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .Name {
+    text-align: right;
+    color: rgb(252, 254, 255);
+    margin-right: 15px;
+    margin-top: 0;
+    padding: 0;
+    font-size: 12px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .ParticipantContainer {
+      width: calc(70% - 20px);
+      margin-bottom: 0;
+    }
+    .Name {
+      font-size: 10px;
+    }
+    .CommitteeName,
+    .Litigant {
+      font-weight: normal;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .Footer {
+      display: none;
+    }
+  }
+  

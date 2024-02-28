@@ -1,13 +1,14 @@
 import './App.css';
 import { Footer } from './Components/Footer';
-import { DiscussionPanel } from './Components/DiscussionPanel'
 import { MeetingRoom } from './Components/MeetingRoom';
-import { DataFetcher } from './Components/DataFetcher';
 import Store from './Redux/Store';
 import { Provider } from 'react-redux';
+import { DataPanelFetcher } from './Components/DataPanelFetcher';
 import { Sidebar } from './Components/Sidebar';
 import { Header } from './Components/Header';
-import { Tune } from '@mui/icons-material';
+import { DataZoomFetcher } from './Components/DataZoomFetcher';
+
+
 
 
 function App() {
@@ -15,9 +16,12 @@ function App() {
   return (
     <div className="App">
       <Provider store={Store}>
-        <Header isExpanded={Tune} isRecording={Tune}></Header>
-        <DataFetcher></DataFetcher>
-        <MeetingRoom />
+        <Header ></Header>
+        <DataPanelFetcher></DataPanelFetcher>
+        <DataZoomFetcher></DataZoomFetcher>
+        {/* <ParentComponent></ParentComponent> */}
+        <MeetingRoom></MeetingRoom>
+        {/* <VirtualCourtroom ></VirtualCourtroom> */}
         <Footer className='footer'></Footer>
         <Sidebar></Sidebar>
       </Provider>

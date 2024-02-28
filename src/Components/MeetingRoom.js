@@ -1,75 +1,81 @@
-import React, { useEffect } from 'react';
-import { useSelector } from "react-redux";
-import Participant from './Participant';
+// MeetingRoom.js
+import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import Participant from '../Components/Participant';
 import '../Style/MeetingRoom.css';
 
 export function MeetingRoom() {
+  const panelDetails = useSelector(state => state.PanelReducer);
+  const zoomDetails = useSelector(state => state.ZoomReducer);
+  const judges = panelDetails.judges || [];
+  const parties = panelDetails.litigants || [];
+  const participantContainersRefs = useRef([]);
 
+  useEffect(() => {
+    participantContainersRefs.current.forEach((container, index) => {
+      const video = container.querySelector('video');
+      if (video) {
+        const aspectRatio = video.videoWidth / video.videoHeight;
+        const containerWidth = video.offsetWidth;
+        const containerHeight = containerWidth / aspectRatio;
 
-  const panelDetails = (useSelector((state) => state.PanelReducer));
+        container.style.height = containerHeight + 'px';
 
-  //   if (!panelDetails) {
-  //     return <div>Loading...</div>;
-  // }
+        if (index < judges.length) {
+          const ratio = 0.7;
+          container.style.height = (containerWidth / aspectRatio) * ratio + 'px';
+        }
+      }
+    });
+  }, [judges, parties]);
 
-  const judges = panelDetails.judges;
-  const parties = panelDetails.litigants;
-
-  if (!judges || !parties) {
-    return <div>Loading...</div>; // Or any other loading indicator
+  if (!judges.length || !parties.length) {
+    return <div>Loading...</div>;
   }
 
-
-  const calculate = (group, totalSpace) => {
-    const numParticipants = group.length;
-    if (numParticipants === 0) return 0; // No participants, no width
-
-    // Calculate width dynamically based on the number of participants and total space available
-    const widthPercentage = (totalSpace / numParticipants);
-    return widthPercentage;
-  };
-
-  const calculateWidth = (group, totalSpace) => {
-    const width = calculate(group, totalSpace);
-    return `${width}%`;
-  };
-
-  const calculateHeight = (group, totalSpace) => {
-    const height = calculate(group, totalSpace);
-    return `${height * 3 / 4}%`; // Aspect ratio: 4:3
-  };
-
-  const totalJudgeSpace = (100 - judges.length * 2); // 50% space for judges
-  const totalParticipantSpace = (100 - parties.length * 2); // 50% space for participants
-
-
-
   return (
-    <div className="Participants" >
-      <div className="JudgesContainer" >
-        {judges.map(judge => (
-          <div
-            style={{
-              width: calculateWidth(judges, totalJudgeSpace), height: calculateHeight(judges, totalJudgeSpace),
-              backgroundColor: 'black'
-            }}>
-            <Participant videoStream={/*judge.videoStream*/ "ff"} />
-            <div className="Footer">כבוד השופט {judge}</div>
-          </div>
-        ))}
+    <div className="MeetingRoom">
+      <div className="JudgesContainer">
+        {judges.map((judge, index) => {
+          const matchingJudge = zoomDetails.find(zoomJudge => zoomJudge.name === judge);
+
+          return (
+            <Participant
+              key={judge.id}
+              ref={ref => (participantContainersRefs.current[index] = ref)}
+              name={matchingJudge.name}
+              role="judge"
+              CommitteeName={panelDetails.CommitteeName}
+              videoStream={matchingJudge.videoStream}
+              audioStatus={matchingJudge.audioStatus}
+              litigant=""
+              itIsMyComputer={matchingJudge.itIsMyComputer}
+            />
+          );
+        })}
       </div>
-      <div className="PartiesContainer" >
-        {parties.map(party => (
-          <div key={party.id}
-            style={{
-              width: calculateWidth(parties, totalParticipantSpace), height: calculateHeight(parties, totalParticipantSpace),
-              backgroundColor: 'black'
-            }}>
-            <Participant videoStream={/*party.videoStream*/ "ff"} />
-            <div className="Footer">עו"ד {party}</div>
-          </div>
-        ))}
+      <div className="PartiesContainer">
+        {parties.map((party, index) => {
+          const matchingParty = zoomDetails.find(zoomParty => zoomParty.name === party.name);
+          const litigant = panelDetails.litigants.find(item => item.name === party.name)?.litigant;
+
+          return (
+            <Participant
+              key={party.id}
+              ref={ref => (participantContainersRefs.current[judges.length + index] = ref)}
+              name={party.name}
+              role="party"
+              CommitteeName={panelDetails.CommitteeName}
+              videoStream={matchingParty.videoStream}
+              audioStatus={matchingParty.audioStatus}
+              litigant={litigant}
+              itIsMyComputer={matchingParty.itIsMyComputer}
+            />
+          );
+        })}
       </div>
     </div>
   );
-}
+};
+
+

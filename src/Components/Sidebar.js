@@ -6,6 +6,7 @@ import { RiScales3Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { LuShield } from "react-icons/lu";
 import logo from '../Style/logo.jpg';
+import sidebar from '../Style/Sidebar.jpg';
 import '../Style/Sidebar.css';
 
 export function Sidebar() {
@@ -92,7 +93,22 @@ export function Sidebar() {
                 <p></p>
             </Modal>
             <button className="leave-discussion-btn" onClick={handleLeaveDiscussion}><h7 className="leave-discussion">יציאה מהדיון</h7></button>
+            {/* <img src={sidebar} className="line"></img> */}
+            {/* <div class="sidebar2"></div> */}
         </div>
+        
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,6 +1,6 @@
 var inititalState = [];
 
-export const ZoomReducer = (state = inititalState, action) => {
+const ZoomReducer = (state = inititalState, action) => {
 
     switch (action.type) {
         case 'SETZOOMDETAILS':
@@ -11,3 +11,4 @@ export const ZoomReducer = (state = inititalState, action) => {
     return state;
 };
 
+export default ZoomReducer;
