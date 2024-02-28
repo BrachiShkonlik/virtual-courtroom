@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { DataPanelFetcher } from './Components/DataPanelFetcher';
 import { Sidebar } from './Components/Sidebar';
 import { Header } from './Components/Header';
-import { DataZoomFetcher } from './Components/DataZoomFetcher';
 
 
 
