@@ -71,7 +71,7 @@ export function Sidebar() {
                         <p>כבוד השופט {judge}</p>
                     ))}
                     {parties.map(party => (
-                        <p>{party}</p>
+                        <p>{party.name}</p>
                     ))}
                 </ul>
 
