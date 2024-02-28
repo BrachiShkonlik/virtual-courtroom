@@ -4,6 +4,7 @@ import { MeetingRoom } from './Components/MeetingRoom';
 import Store from './Redux/Store';
 import { Provider } from 'react-redux';
 import { DataPanelFetcher } from './Components/DataPanelFetcher';
+import { DataZoomFetcher } from './Components/DataZoomFetcher';
 import { Sidebar } from './Components/Sidebar';
 import { Header } from './Components/Header';
 
@@ -15,12 +16,10 @@ function App() {
   return (
     <div className="App">
       <Provider store={Store}>
-        <Header ></Header>
+        <Header></Header>
         <DataPanelFetcher></DataPanelFetcher>
         <DataZoomFetcher></DataZoomFetcher>
-        {/* <ParentComponent></ParentComponent> */}
         <MeetingRoom></MeetingRoom>
-        {/* <VirtualCourtroom ></VirtualCourtroom> */}
         <Footer className='footer'></Footer>
         <Sidebar></Sidebar>
       </Provider>
