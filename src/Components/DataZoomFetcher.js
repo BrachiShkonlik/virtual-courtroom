@@ -7,17 +7,19 @@ export function DataZoomFetcher() {
     const dispatch = useDispatch();
     useEffect(() => {
         // Simulated async dispatch with pre-defined data
-        const fakeZoomData = {
-            judges: [{
+        const fakeZoomData =
+            [{
                 id: "123456",
                 name: "ישראל ישראלי",
                 email: "john@example.com",
                 role: "moderator",
                 audioStatus: "connected",
                 videoStatus: "connected",
-                shareScreenStatus: "not shared", 
-                videoStream: "videoStream"
-            } ], litigants: [{
+                shareScreenStatus: "not shared",
+                videoStream: "videoStream",
+                itIsMyComputer: "false",
+                ItisRecoder: "true"
+            }, {
                 id: "64634646",
                 name: "קובי יעקבי",
                 email: "jane@example.com",
@@ -25,8 +27,10 @@ export function DataZoomFetcher() {
                 audioStatus: "disconnected",
                 videoStatus: "connected",
                 shareScreenStatus: "not shared",
-                videoStream: "videoStream"
-            },  {
+                videoStream: "videoStream",
+                itIsMyComputer: "true",
+                ItisRecoder: "true"
+            }, {
                 id: "5612646",
                 name: "שושנה שושני",
                 email: "alice@example.com",
@@ -34,8 +38,10 @@ export function DataZoomFetcher() {
                 audioStatus: "disconnected",
                 videoStatus: "connected",
                 shareScreenStatus: "not shared",
-                videoStream: "videoStream"
-            } ]}
+                videoStream: "videoStream",
+                itIsMyComputer: "false",
+                ItisRecoder: "false"
+            }];
 
         dispatch(setZoomDetails(fakeZoomData));
     }, [dispatch]);

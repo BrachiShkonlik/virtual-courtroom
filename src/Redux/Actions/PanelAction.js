@@ -1,5 +1,4 @@
-export const setPanelDetails = (data) => {
-    debugger
+export const setPanelDetails = (data) => {    
     return {
 
         type: "SETPANELDETAILS",

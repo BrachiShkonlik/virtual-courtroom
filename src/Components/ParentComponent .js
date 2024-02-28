@@ -20,7 +20,6 @@ export function ParentComponent() {
             ...panelData, 
             participants: [] 
         };
-        debugger
     
         panelData.judges.forEach(judgeName => {
             const participant = zoomData.find(participant => participant.name === judgeName);

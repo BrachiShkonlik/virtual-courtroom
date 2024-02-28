@@ -1,30 +1,22 @@
 import './App.css';
 import { Footer } from './Components/Footer';
-import { DiscussionPanel } from './Components/DiscussionPanel'
 import { MeetingRoom } from './Components/MeetingRoom';
-import { DataFetcher } from './Components/DataFetcher';
 import Store from './Redux/Store';
 import { Provider } from 'react-redux';
-import { useEffect } from 'react';
-import { MeetingRoom } from './Components/MeetingRoom';
 import { DataPanelFetcher } from './Components/DataPanelFetcher';
-import Store from './Redux/Store';
-import { Provider } from 'react-redux';
 import { Sidebar } from './Components/Sidebar';
 import { Header } from './Components/Header';
-import { Tune } from '@mui/icons-material';
 import { DataZoomFetcher } from './Components/DataZoomFetcher';
-import { ParentComponent } from './Components/ParentComponent ';
 
 
 
 
-
+function App() {
 
   return (
     <div className="App">
       <Provider store={Store}>
-        <Header isExpanded={Tune} isRecording={Tune}></Header>
+        <Header ></Header>
         <DataPanelFetcher></DataPanelFetcher>
         <DataZoomFetcher></DataZoomFetcher>
         {/* <ParentComponent></ParentComponent> */}

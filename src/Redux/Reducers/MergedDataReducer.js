@@ -4,7 +4,6 @@ var inititalState = [];
 
     switch(action.type) {
         case 'SETMERGEDATA':
-            debugger
             state = action.payload;
             return state;
     }

@@ -4,7 +4,6 @@ var inititalState = [];
 
     switch(action.type) {
         case 'SETPANELDETAILS':
-            debugger
             state = action.payload;
             return state;
     }
